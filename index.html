@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background - Parallax</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <img src="https://cdn.discordapp.com/attachments/897304698468565022/900871881865969694/1.png" data-speed="-5" class="layer">
+        <img src="https://cdn.discordapp.com/attachments/897304698468565022/900871883942137896/2.png" data-speed="5" class="layer">
+        <img src="https://cdn.discordapp.com/attachments/897304698468565022/900871885175267378/3.png" data-speed="2" class="layer">
+        <img src="https://cdn.discordapp.com/attachments/897304698468565022/900871886823645254/4.png" data-speed="6" class="layer">
+        <img src="https://cdn.discordapp.com/attachments/897304698468565022/900871888090316830/5.png" data-speed="8" class="layer">
+        <img src="https://cdn.discordapp.com/attachments/897304698468565022/900871888996282368/6.png" data-speed="-2" class="layer">
+        <img src="https://cdn.discordapp.com/attachments/897304698468565022/900871890376228905/7.png" data-speed="4" class="layer">
+        <img src="https://cdn.discordapp.com/attachments/897304698468565022/900871893144461372/8.png" data-speed="-9" class="layer">
+        <img src="https://cdn.discordapp.com/attachments/897304698468565022/900871917928595506/9.png" data-speed="-6" class="layer">
+        <img src="https://cdn.discordapp.com/attachments/897304698468565022/900871919534997514/10.png" data-speed="-7" class="layer">
+        <img src="https://cdn.discordapp.com/attachments/897304698468565022/900871978360115210/11.png" data-speed="5" class="layer">
+        <img src="https://cdn.discordapp.com/attachments/897304698468565022/900871981409378334/12.png" data-speed="2" class="layer">
+        <h2 class="layer">Games</h2>
+    </section>
+
+    
+
+    <script type="text/javascript">
+        document.addEventListener("mousemove", parallax);
+        function parallax(e){
+            this.querySelectorAll('.layer').forEach(layer => {
+                const speed = layer.getAttribute('data-speed')
+
+                const x = (window.innerWidth - e.pageX*speed)/100
+                const y = (window.innerHeight - e.pageY*speed)/100
+
+                layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+            })
+        }
+    </script>
+</body>
+</html>
